@@ -70,20 +70,36 @@ namespace IndexerOverLoad
     {
         static void Main(string[] args)
         {
-
+            int x;
             IndexerDemo indexerobj = new IndexerDemo(5);
 
             // Lets put some value
 
             for(int i =0; i < 10;i++)
             {
-                indexerobj[i] = i;
+                indexerobj[i] = i*i;
                 if(indexerobj.errflag == true)
                 {
                     Console.WriteLine("Out Of Bound for  indexerobj[" + i+ "]");
                 }
             
             }
+            // Lets Read some value
+
+            for (int i = 0; i < 10; i++)
+            {
+                x = indexerobj[i];
+                if (indexerobj.errflag == false)
+                {
+                    Console.WriteLine("Value of indexerobj[" + i + "] is :: " + x);
+                }
+                if (indexerobj.errflag == true)
+                {
+                    Console.WriteLine("Out Of Bound for  indexerobj[" + i + "]");
+                }
+
+            }
+
             Console.Read();
 
         }
