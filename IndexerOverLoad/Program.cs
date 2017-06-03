@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IndexerOverLoad
 {
-    class IndererDemo
+    class IndexerDemo
         {
         int[] a;
         public int length;
@@ -24,7 +24,7 @@ namespace IndexerOverLoad
             }
         }
         
-        public IndererDemo (int size)
+        public IndexerDemo (int size)
         {
             a = new int[size];
             length = size;
@@ -71,7 +71,21 @@ namespace IndexerOverLoad
         static void Main(string[] args)
         {
 
+            IndexerDemo indexerobj = new IndexerDemo(5);
+
+            // Lets put some value
+
+            for(int i =0; i < 10;i++)
+            {
+                indexerobj[i] = i;
+                if(indexerobj.errflag == true)
+                {
+                    Console.WriteLine("Out Of Bound for  indexerobj[" + i+ "]");
+                }
             
+            }
+            Console.Read();
+
         }
     }
 }
